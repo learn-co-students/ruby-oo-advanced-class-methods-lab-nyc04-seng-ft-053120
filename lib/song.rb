@@ -34,11 +34,12 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-    song = self.find_by_name(name)
-    if song.nil?
-      song = create_by_name(name)
-    end
-    song
+    # song = self.find_by_name(name)
+    # if song.nil?
+    #   song = create_by_name(name)
+    # end
+    # song
+    self.find_by_name(name) || self.create_by_name(name)
   end
 
   def self.alphabetical
