@@ -23,7 +23,7 @@ class Song
   def  self.create_by_name(song_name)
     song=self.new
     song.name=song_name
-    self.all<<song
+    song.save
     song
   end
   def self.find_by_name(song_name)
@@ -49,7 +49,7 @@ class Song
     artist,song_name= filename.split(" - ")
     song.name=song_name.gsub(".mp3","")
     song.artist_name=artist
-    self.all<<song
+    song.save
   end
   def self.destroy_all
     self.all.clear
