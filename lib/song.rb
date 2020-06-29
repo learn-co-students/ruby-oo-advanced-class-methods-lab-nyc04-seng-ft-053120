@@ -52,6 +52,7 @@ class Song
   end
 
   def self.create_from_filename(filename)
+    binding.pry
     song=self.create
     song.name=filename.split(" - ")[1].split(".")[0]
     song.artist_name=filename.split(" - ")[0]
